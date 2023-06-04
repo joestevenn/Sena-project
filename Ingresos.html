@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<html>
+<head>
+    <title>Ingresos</title>
+</head>
+<body>
+    <header>
+        <h2>Ingresos</h2>
+    </header>
+    
+    <nav id="navigacion">
+        <ul>
+            <li><a href="Inicio.html">Inicio</a></li>
+            <li><a href="Ingresos.html">Ingresos</a></li>
+            <li><a href="Egresos.html">Egresos</a></li>
+            <li><a href="Ventas.html">Ventas</a></li>
+            <li><a href="Reportes.html">Reportes</a></li>
+        </ul>
+    </nav>
+
+    <select id="producto">
+      <option value="">Producto</option>
+      <option value="Coca Cola">Coca Cola</option>
+    </select>
+  
+    <select id="marca">
+      <option value="">Marca</option>
+      <option value="Coca Cola">Coca Cola</option>
+    </select>
+  <br>
+  <br>
+    <select id="cantidad">
+      <option value="">Cantidad</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  
+    <h3>Comentarios:</h3>
+    <textarea id="comentario" rows="4" cols="50"></textarea>
+  
+    <table border="1" id="tabla">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Marca</th>
+                <th>Cantidad</th>
+                <th>Comentario</th>
+            </tr>
+        </thead> 
+        <tbody>
+
+        </tbody>
+    </table>
+  
+    <button type="button" onclick="agregarFila()">Aceptar</button>
+
+    <script>
+      function agregarFila() {
+        var producto = document.getElementById("producto").value;
+        var marca = document.getElementById("marca").value;
+        var cantidad = document.getElementById("cantidad").value;
+        var comentario = document.getElementById("comentario").value;
+        
+        var tabla = document.getElementById("tabla").getElementsByTagName("tbody")[0];
+        var fila = tabla.insertRow();
+        
+        var celdaProducto = fila.insertCell(0);
+        var celdaMarca = fila.insertCell(1);
+        var celdaCantidad = fila.insertCell(2);
+        var celdaComentario = fila.insertCell(3);
+        
+        celdaProducto.innerHTML = producto;
+        celdaMarca.innerHTML = marca;
+        celdaCantidad.innerHTML = cantidad;
+        celdaComentario.innerHTML = comentario;
+      }
+    </script>
+</body>
+</html>
